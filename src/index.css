@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+/* Kamu bisa tetap menambahkan CSS custom di bawahnya */
+body {
+  background-color: #0a0a0a;
+  color: white;
+}
+/* --- 1. Custom Global Scrollbar (Vertikal) --- */
+::-webkit-scrollbar {
+  width: 10px; /* Lebar scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a; /* Warna latar scrollbar (sama dengan BG body) */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #262626; /* Warna batang scrollbar */
+  border-radius: 10px;
+  border: 2px solid #0a0a0a; /* Memberi jarak agar terlihat melayang */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #dc2626; /* Berubah jadi merah saat diarahkan (matching tema) */
+}
+
+/* --- 2. Utility untuk Menyembunyikan Scrollbar (Horizontal) --- */
+/* Gunakan ini pada elemen yang butuh scroll tapi ingin bersih (seperti Genre Pills) */
+@utility no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+}
+/* --- Custom Scrollbar untuk Genre (Horizontal) --- */
+.genre-scroll::-webkit-scrollbar {
+  height: 4px; /* Sangat tipis agar tetap elegan */
+}
+
+.genre-scroll::-webkit-scrollbar-track {
+  background: transparent; /* Latar belakang transparan agar tidak penuh */
+}
+
+.genre-scroll::-webkit-scrollbar-thumb {
+  background: #262626; /* Warna abu-abu gelap (senada dengan tema) */
+  border-radius: 20px;
+}
+
+/* Munculkan warna merah saat area genre di-hover */
+.genre-scroll:hover::-webkit-scrollbar-thumb {
+  background: #dc2626; 
+}
+
+/* Dukungan untuk Firefox */
+.genre-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #262626 transparent;
+}
+body {
+  background-color: #0a0a0a;
+  color: white;
+  font-family: 'Inter', sans-serif; /* Opsional: Tambahkan font yang lebih modern */
+}
